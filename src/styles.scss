@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/*   You can mark the path "src/styles.css" as external 
+to exclude it from the bundle, which will remove this error 
+and leave the unresolved path in the bundle.e unresolved path in the bundle. */
+
+@font-face {
+  font-family: "Peyda-th";
+  src: url("./assets/fonts/Peyda/Peyda-Thin.ttf");
+}
+@font-face {
+  font-family: "Peyda-rg";
+  src: url("./assets/fonts/Peyda/Peyda-Regular.ttf");
+}
+@font-face {
+  font-family: "Peyda-md";
+  src: url("./assets/fonts/Peyda/Peyda-Medium.ttf");
+}
+
+body {
+  font-family: "Peyda", sans-serif;
+  background-color: #03c04a;
+}
+.swiper-slide {
+  margin-top: 1rem;
+}

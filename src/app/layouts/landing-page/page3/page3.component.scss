@@ -1,0 +1,42 @@
+section {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10ox;
+}
+
+.sec-descreption {
+  font-family: "Peyda-rg";
+  color: #fff;
+  // text-wrap: balance;
+  padding: 5px;
+  font-size: 1.25rem;
+  justify-content: space-between;
+}
+
+.h4-header {
+  font-family: "Peyda-md";
+  // display: block;
+  font-size: 2.5rem;
+  color: #ffff;
+  font-weight: bolder;
+  // line-height: 3rem;
+}
+.btn-container {
+  top: 1rem;
+  bottom: 1rem;
+  .btn {
+    padding: 10px;
+    font: 1rem "Peyda-md";
+    border: none;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+
+    background-color: #f35d50;
+    border-radius: 15px;
+    min-width: 150px;
+  }
+}
+.btn:hover {
+  box-shadow: 1px 2px 1px 1px #f87c7c;
+}

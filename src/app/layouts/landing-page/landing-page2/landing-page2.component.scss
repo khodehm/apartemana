@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+}
+@media (max-width: 640px) {
+  .container {
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    // justify-items: end;
+    overflow: scroll;
+
+    header {
+      align-items: center;
+      margin-top: 5rem;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      flex-direction: row-reverse;
+    }
+    .img-container {
+      position: relative;
+      width: 9rem;
+    }
+    section {
+      text-align: center;
+      margin-top: 10px;
+      padding: 10ox;
+    }
+    .span-one {
+      font-family: "Peyda-md";
+      font-size: 3rem;
+      color: white;
+      //   padding: 0px 1px 0px ;
+    }
+    .span-three {
+      font-family: "Peyda-md";
+      font-size: 3rem;
+      color: white;
+      //   padding: 0px 2px 0px ;
+    }
+    .span-four {
+      font-family: "Peyda-th";
+      font-size: 2.75rem;
+      color: #fff;
+      padding: 0px 6px 0px;
+    }
+
+    .sec-descreption {
+      font-family: "Peyda-rg";
+      color: #fff;
+      // text-wrap: balance;
+      padding: 5px;
+      font-size: 1.25rem;
+      justify-content: space-between;
+    }
+  }
+  .btn {
+    font-family: "Peyda-md";
+    font-size: 1.5rem;
+    color: #fff;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: #f75959 !important;
+    margin-bottom: 3rem;
+  }
+  .btn:hover {
+    box-shadow: 1px 2px 1px 1px #f87c7c;
+  }
+  .btn-container {
+    top: 1rem;
+    bottom: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    visibility: hidden;
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    .img-container {
+      float: left;
+    }
+    span {
+      font-family: "Peyda-md";
+      color: #fff;
+      text-wrap: pretty;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      display: grid;
+      // align-content: stretch;
+      // flex-wrap: wrap;
+      // justify-content: space-evenly;
+      // align-items: baseline;
+
+      // span {
+      //   display: inline;
+      //   line-height: 10;
+      // }
+      // .arrow {
+      //   display: none;
+      //   visibility: hidden;
+      // }
+      // .img-container {
+      //   height: 50%;
+      //   width: 50%;
+      // }
+
+      // header {
+      //   align-items: center;
+      //
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
