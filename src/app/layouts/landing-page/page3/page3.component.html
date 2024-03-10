@@ -11,8 +11,62 @@
       خودمون ﭘرداخت میکنیم.
     </p>
 
-    <div class="btn-container">
-      <button class="btn btn-go">بزن بریم</button>
+    <div class="form-Container">
+      <button class="btn btn-go" (click)="formColapse()">بزن بریم</button>
+      @if(isOpen){
+      <nz-modal
+        [(nzVisible)]="modalVisibility"
+        nzOkDisabled="true"
+        nzCancelDisabled="true"
+      >
+        <ng-container *nzModalContent="">
+          <form
+            nz-form
+            (submit)="onFormSubmit()"
+            class="form"
+            [formGroup]="form"
+          >
+            <nz-form-item>
+              <label nzFor="name" nzSpan="5" nzRequired
+                >نام ونام خانوادگی مدیر ساختمان</label>
+              <nz-form-control nzSpan="1-24">
+                <nz-input-group>
+                  <input nz-input required formControlName="managerName" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item class="formItem">
+              <label nzFor="name" nzSpan="5" nzRequired
+                >شماره موبایل مدیر ساختمان</label
+              >
+              <nz-form-control nzSpan="1-24">
+                <nz-input-group>
+                  <input nz-input required formControlName="managerPhone" />
+                </nz-input-group>
+              </nz-form-control> </nz-form-item
+            ><nz-form-item class="formItem">
+              <label nzFor="name" nzSpan="5" nzRequired
+                >تعداد واحد ساختمان شما</label
+              >
+              <nz-form-control nzSpan="1-24">
+                <nz-input-group>
+                  <input nz-input required formControlName="numberUnit" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <button
+              type="submit"
+              nz-button
+              class="nz-button"
+              (click)="OnLoad()"
+              [nzLoading]="loading"
+            >
+              ثبت
+            </button>
+          </form>
+        </ng-container>
+      </nz-modal>
+      }
     </div>
   </section>
 </div>

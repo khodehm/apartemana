@@ -21,22 +21,26 @@ section {
   font-weight: bolder;
   // line-height: 3rem;
 }
-.btn-container {
+
+.btn {
   top: 1rem;
   bottom: 1rem;
-  .btn {
-    padding: 10px;
-    font: 1rem "Peyda-md";
-    border: none;
-    color: #fff;
-    margin-top: 2rem;
-    cursor: pointer;
+  padding: 10px;
+  font: 1rem "Peyda-md";
+  border: none;
+  color: #fff;
+  margin-top: 2rem;
+  cursor: pointer;
 
-    background-color: #f35d50;
-    border-radius: 15px;
-    min-width: 150px;
-  }
+  background-color: #f35d50;
+  border-radius: 15px;
+  min-width: 150px;
 }
-.btn:hover {
-  box-shadow: 1px 2px 1px 1px #f87c7c;
+.nz-button {
+  background-color: #03c04a;
+  width: 150px;
+}
+
+.ant-modal-content {
+  display: inline-block;
 }

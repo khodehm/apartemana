@@ -15,5 +15,6 @@ export class AppComponent {
     speed: 400,
     allowSlidePrev: true,
     allowSlideNext: true,
+    
   };
 }
