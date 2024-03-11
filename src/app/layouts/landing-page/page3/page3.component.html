@@ -10,14 +10,13 @@
       شارژهای خودشونو از ظریق آپاراتمان پرداخت کردند به قید قرعه شارژ خیلیاشونو
       خودمون ﭘرداخت میکنیم.
     </p>
-
     <div class="form-Container">
       <button class="btn btn-go" (click)="formColapse()">بزن بریم</button>
-      @if(isOpen){
+
       <nz-modal
         [(nzVisible)]="modalVisibility"
-        nzOkDisabled="true"
-        nzCancelDisabled="true"
+        (nzOnCancel)="formColapse()"
+        [nzClosable]="false"
       >
         <ng-container *nzModalContent="">
           <form
@@ -26,32 +25,48 @@
             class="form"
             [formGroup]="form"
           >
-            <nz-form-item>
-              <label nzFor="name" nzSpan="5" nzRequired
-                >نام ونام خانوادگی مدیر ساختمان</label>
-              <nz-form-control nzSpan="1-24">
-                <nz-input-group>
-                  <input nz-input required formControlName="managerName" />
-                </nz-input-group>
+            <nz-form-item nzAlign="middle">
+              <nz-form-control
+                nzErrorTip="این فیلد را نمیتوانید خالی بگذارید"
+                nzSpan="1-24"
+                ><div class="input-container">
+                  <nz-input-group>
+                    <input nz-input required formControlName="managerName" />
+                    <label nzFor="name" nzSpan="5" nzRequired>
+                      نام ونام خانوادگی مدیر ساختمان
+                    </label>
+                  </nz-input-group>
+                </div>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item class="formItem">
-              <label nzFor="name" nzSpan="5" nzRequired
-                >شماره موبایل مدیر ساختمان</label
+              <nz-form-control
+                nzSpan="1-24"
+                nzErrorTip="لطفا شماره موبایل صحیح وارد کنید "
               >
-              <nz-form-control nzSpan="1-24">
-                <nz-input-group>
-                  <input nz-input required formControlName="managerPhone" />
-                </nz-input-group>
-              </nz-form-control> </nz-form-item
-            ><nz-form-item class="formItem">
-              <label nzFor="name" nzSpan="5" nzRequired
-                >تعداد واحد ساختمان شما</label
+                <div class="input-container">
+                  <nz-input-group>
+                    <input nz-input required formControlName="managerPhone" />
+                    <label nzFor="name" nzSpan="5" nzRequired
+                      >شماره موبایل مدیر ساختمان</label
+                    >
+                  </nz-input-group>
+                </div>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item class="formItem">
+              <nz-form-control
+                nzSpan="1-24"
+                nzErrorTip="این فیلد را نمیتوانید خالی بگذارید"
               >
-              <nz-form-control nzSpan="1-24">
-                <nz-input-group>
-                  <input nz-input required formControlName="numberUnit" />
-                </nz-input-group>
+                <div class="input-container">
+                  <nz-input-group>
+                    <input nz-input required formControlName="numberUnit" />
+                    <label nzFor="name" nzSpan="5" nzRequired>
+                      تعداد واحد ساختمان شما</label
+                    >
+                  </nz-input-group>
+                </div>
               </nz-form-control>
             </nz-form-item>
             <button
@@ -66,7 +81,6 @@
           </form>
         </ng-container>
       </nz-modal>
-      }
     </div>
   </section>
 </div>

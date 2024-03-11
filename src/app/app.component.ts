@@ -12,9 +12,5 @@ export class AppComponent {
     direction: 'vertical',
     height: window.innerHeight,
     width: window.innerWidth,
-    speed: 400,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-    
   };
 }

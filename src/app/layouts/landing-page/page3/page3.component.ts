@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, Type, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Inject } from '@angular/core';
 import validationService from '../../services/validation.service';
@@ -10,10 +10,11 @@ import { IUser } from '../../services/Iuser';
 })
 export class Page3Component implements OnInit {
   isOpen: boolean = false;
-  modalVisibility: boolean = true;
+  modalVisibility: boolean = false;
   loading!: boolean;
   form!: FormGroup;
   users!: IUser;
+  placeHolder!:['نام ونام خانوادگی مدیر ساختمان',"شماره موبایل مدیر ساختمان","تعداد واحد ساختمان شما"];
   OnLoad() {
     this.loading = !this.loading;
   }
@@ -26,19 +27,21 @@ export class Page3Component implements OnInit {
       }
     });
   }
-  constructor(private formgen: validationService) {}
+  constructor(private formGen: validationService) {}
   ngOnInit() {
-    this.form = this.formgen.formBuilder();
+    this.form = this.formGen.formBuilder();
   }
 
   onFormSubmit() {
     if (this.form.valid) {
       console.log('Form Submit Success:', this.form.value);
     } else {
+      this.handleInValidExecution();
       throw 'not valid form ';
     }
   }
   formColapse() {
-    this.isOpen = !this.isOpen;
+    this.modalVisibility = !this.modalVisibility;
+    this.form.reset();
   }
 }

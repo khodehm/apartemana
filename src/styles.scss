@@ -15,7 +15,29 @@ and leave the unresolved path in the bundle.e unresolved path in the bundle. */
   font-family: "Peyda-md";
   src: url("./assets/fonts/Peyda/Peyda-Medium.ttf");
 }
+@keyframes bounce {
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+@keyframes arrowAnimate {
+  0% {
+    transform: translateY(0);
+  }
 
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 body {
   display: flex;
   align-items: center;
@@ -29,7 +51,25 @@ body {
   margin: auto;
 }
 .swiper-slide {
-  margin-top: auto;
+  height: 100vh;
+}
+// .swiper-slide {
+//   .swiper-slide-next {
+//     background-color: #fff;
+//   }
+// }
+.swiper-slide swiper-slide {
+  overflow: scroll;
+}
+
+.swiper-wrapper {
+  height: 100vh;
+  width: 100%;
+}
+.swiper-slide {
+  .swiper-slide-prev {
+    overflow-y: scroll;
+  }
 }
 .ant-modal-footer {
   visibility: hidden;
@@ -60,14 +100,25 @@ body {
   input {
     height: 50px;
   }
-  .ant-input-group > .ant-input:first-child {
-    border-radius: 15px;
-  }
-  .ant-input {
-    border: 1px solid #06da06;
-  }
-  //   .ant-input-group{
 
+  .ant-input-group > .ant-input:first-child {
+    border-radius: 9px;
+  }
+
+  .ant-input:focus,
+  .ant-input-focused {
+    border: 1px solid #06da06;
+    box-shadow: none;
+  }
+  .ant-input-status-error:not(.ant-input-disabled):not(
+      .ant-input-borderless
+    ).ant-input-focused,
+  .ant-input-status-error:not(.ant-input-disabled):not(
+      .ant-input-borderless
+    ).ant-input:focus {
+    border-color: #ff7875;
+    box-shadow: none;
+  }
   // background-color: red;  }
 }
 // .ant-input-group {

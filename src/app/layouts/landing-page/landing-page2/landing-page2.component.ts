@@ -1,3 +1,4 @@
+import { withNoXsrfProtection } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './landing-page2.component.html',
   styleUrl: './landing-page2.component.scss',
 })
-export class LandingPage2Component {}
+export class LandingPage2Component {
+ 
+}

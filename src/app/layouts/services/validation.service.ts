@@ -14,7 +14,8 @@ export default class validationService {
   formBuilder(): FormGroup {
     return this.fb.group({
       managerName: ['', Validators.required],
-      managerPhone: ['', Validators.required],
+      managerPhone: ['', Validators.required, 
+    ],
       numberUnit: ['', Validators.required],
     });
   }

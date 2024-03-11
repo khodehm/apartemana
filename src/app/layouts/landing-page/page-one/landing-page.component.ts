@@ -3,6 +3,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -13,16 +14,21 @@ import {
 })
 export class LandingPageComponent implements AfterViewInit {
   @ViewChild('arrow', { read: ElementRef }) arrow!: ElementRef;
-  ngAfterViewInit(): void {
-    window.scrollTo();
-    let button = this.arrow.nativeElement;
-
-    console.log(this.arrow.nativeElement);
+  @HostListener('window.scroll', ['$event'])
+  onScroll(event: Event) {
+    console.log(event);
   }
-  ngOnInit(): void {
-    //  const swiper=new Swiper();
+  ngAfterViewInit(): void {
+
   }
   constructor() {}
 
-  spanText: string[] = ['بــا آپاراتمــانا', '  شارژ واحدت', ' رایگان میشه'];
+  scrollToMiddle() {
+    const ScrollMiddle: number = window.innerHeight / 2;
+    this.arrow.nativeElement.scroll({
+      top: ScrollMiddle,
+      behavior: 'smooth',
+    });
+    console.log(this.scrollToMiddle);
+  }
 }

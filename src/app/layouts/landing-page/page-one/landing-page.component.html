@@ -1,17 +1,15 @@
 <div class="container">
-  <div>
-    <nz-content class="home-content">
-      <header>
-        <span class="span-one"> بــا آپارتمــانا </span>
-        <span class="span-two"> شارژ واحدت</span>
-        <span class="span-three"> رایگان میشه </span>
-      </header>
-      <div class="img-container">
-        <img src="/assets/mainpage.png" alt="main page pic" />
-        <button class="arrow" #arrow>
-          <img src="/assets/arrow 1.svg" alt="arrow" />
-        </button>
-      </div>
-    </nz-content>
-  </div>
+  <nz-content class="home-content">
+    <header>
+      <span class="span-one"> بــا آپارتمــانا </span>
+      <span class="span-two"> شارژ واحدت</span>
+      <span class="span-three"> رایگان میشه </span>
+    </header>
+    <div class="img-container">
+      <img src="/assets/mainpage.png" alt="main page pic" />
+      <button class="arrow" #arrow (click)="scrollToMiddle()">
+        <img src="/assets/arrow 1.svg" alt="arrow" />
+      </button>
+    </div>
+  </nz-content>
 </div>
