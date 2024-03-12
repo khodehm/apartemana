@@ -42,7 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  // position: relative;
   font-family: "Peyda", sans-serif;
   background-color: #fff;
   overflow: hidden;
@@ -51,7 +51,7 @@ body {
   margin: auto;
 }
 .swiper-slide {
-  height: 100vh;
+  height: auto;
 }
 // .swiper-slide {
 //   .swiper-slide-next {

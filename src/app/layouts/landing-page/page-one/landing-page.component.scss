@@ -1,27 +1,27 @@
 .container {
-  max-width: 640px;
   display: flex;
   // grid-template-columns: repeat(1, minmax(0, 1fr));
   header {
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
 }
 
 .home-content {
-  // margin-top: 1rem;
+  margin-top: 1rem;
   text-align: center !important;
+}
+span {
+  display: block;
 }
 .span-one {
   font-family: "Peyda-md";
-  display: block;
   font-size: 3rem;
   color: white;
   line-height: 3.5rem;
 }
 .span-two {
   font-family: "Peyda-md";
-  display: block;
   font-size: 3rem;
   color: #ffff;
   font-weight: bolder;
@@ -29,7 +29,6 @@
 }
 .span-three {
   font-family: "Peyda-md";
-  display: block;
   font-size: 3rem;
   color: yellow;
   font-weight: bolder;
@@ -50,8 +49,8 @@
   background: inherit;
   box-shadow: unset;
   border: unset;
-  margin: 2rem;
   animation: arrowAnimate 1s infinite;
+  padding: 1rem;
   img {
     cursor: pointer;
     position: inherit;
@@ -62,7 +61,7 @@
 @media (max-height: 667px) {
   .arrow {
     text-decoration: none;
-    margin: 2rem;
+    // margin: 2rem;
     background: inherit;
     box-shadow: unset;
     border: unset;

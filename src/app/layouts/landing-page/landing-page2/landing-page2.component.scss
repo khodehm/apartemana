@@ -3,7 +3,7 @@
 }
 header {
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -63,18 +63,18 @@ section {
 }
 .svg-container {
   display: grid;
+  margin: 1em;
 }
-  .arrow {
-    text-decoration: none;
-    background: inherit;
-    box-shadow: unset;
-    border: unset;
-    margin: 2rem;
-    animation: arrowAnimate 1s infinite;
-    img {
-      cursor: pointer;
-      position: inherit;
-      width: 25px;
-    }
+.arrow {
+  text-decoration: none;
+  background: inherit;
+  box-shadow: unset;
+  border: unset;
+  padding: 1rem;
+  animation: arrowAnimate 1s infinite;
+  img {
+    cursor: pointer;
+    position: inherit;
+    width: 25px;
   }
-
+}
