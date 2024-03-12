@@ -48,7 +48,7 @@ section {
 }
 .nz-button {
   background-color: #03c04a;
-  width: 150px;
+  width: 200px;
 }
 
 .ant-modal-content {
@@ -57,23 +57,29 @@ section {
 // input :focus {
 //   position: absolute;
 // }
-.input-container {
-  position: relative;
-  margin-bottom: 16px;
-}
 
-label :active {
-  top: -12px;
-  left: 0;
-  font-size: 12px;
-}
 @media (max-height: 667px) {
   .h4-header {
     margin-top: 5rem;
   }
 }
-.label.collapsed {
-  transform: translateY(-20px); /* Adjust the value based on your design */
-  font-size: 12px; /* Adjust the font size as needed */
-  // color: #999; /* Adjust the color as needed */
+.input-group-clear-icon:hover {
+  color: #ff4d4f; /* Adjust the color as needed */
+}
+.input-container {
+  position: relative;
+}
+.input-group {
+  position: relative;
+}
+
+
+
+/* Style for the clear icon (optional) */
+.input-group-clear-icon {
+  cursor: pointer;
+}
+
+.input-group-clear-icon:hover {
+  color: #ff4d4f; /* Adjust the color as needed */
 }

@@ -7,6 +7,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 //ng Zorro imports**********************************************************************
 import { en_US } from 'ng-zorro-antd/i18n';
 import { NzFormModule } from 'ng-zorro-antd/form';

@@ -102,7 +102,7 @@ body {
   }
 
   .ant-input-group > .ant-input:first-child {
-    border-radius: 9px;
+    border-radius: 12px;
   }
 
   .ant-input:focus,
@@ -126,4 +126,24 @@ body {
 // }
 .ant-modal-content {
   border-radius: 10%;
+}
+.ant-input-group-addon:last-child,
+.ant-input-group-addon:last-child .ant-select .ant-select-selector,
+.ant-input-group > .ant-input-affix-wrapper:not(:first-child) .ant-input,
+.ant-input-group > .ant-input:last-child,
+.ant-input-group > .ant-input:last-child .ant-select .ant-select-selector {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ant-form label {
+  font-size: 14px;
+  position: absolute;
+  top: -13px;
+  right: 0;
+  font-size: 12px;
+  color: #52c41a;
+  transition: all 0.3s #52c41a ease-out;
+}
+.ant-modal-body {
+  text-align: center;
 }

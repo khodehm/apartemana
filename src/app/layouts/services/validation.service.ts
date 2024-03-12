@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export default class validationService {
-  //   submitApplication(
-  //     managerName: string,
-  //     managerPhone: number | string,
-  //     numberUnit: number | string
-  //   ) {
-  //     console.log(managerName, managerPhone, numberUnit);
-
- 
   constructor(private fb: FormBuilder) {}
+  validateForm() {
+    this.fb.control.name;
+  }
   formBuilder(): FormGroup {
     return this.fb.group({
-      managerName: ['', Validators.required],
-      managerPhone: ['', Validators.required, 
-    ],
+      managerName: [
+        '',
+        Validators.required,
+        Validators.pattern('^[\u0600-\u06FFa-zA-Z]*$'),
+      ],
+      managerPhone: [
+        '',
+        [Validators.required, Validators.pattern('^09\\d{7}$')],
+      ],
       numberUnit: ['', Validators.required],
     });
   }
