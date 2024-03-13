@@ -31,6 +31,7 @@ import { LandingPage2Component } from './layouts/landing-page/landing-page2/land
 import { SwiperModule } from 'swiper/angular';
 import { Page3Component } from './layouts/landing-page/page3/page3.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { InputValidatorDirective } from './directives/input-validation.directive';
 registerLocaleData(fa);
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ registerLocaleData(fa);
     LandingPageComponent,
     LandingPage2Component,
     Page3Component,
+    InputValidatorDirective,
   ],
   imports: [
     BrowserModule,

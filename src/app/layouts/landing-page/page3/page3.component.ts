@@ -1,6 +1,6 @@
 import { Component, OnInit, Type, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IUser } from '../../services/Iuser';
+import { IUser } from '../../../services/Iuser';
 
 @Component({
   selector: 'landing-page3',
@@ -30,10 +30,7 @@ export class Page3Component implements OnInit {
   initForm() {
     this.form = this.fb.group({
       managerName: ['', Validators.required],
-      managerPhone: [
-        '',
-        [Validators.required, Validators.pattern('^09[0-9]{9}$')],
-      ],
+      managerPhone: ['', [Validators.required]],
       numberUnit: ['', Validators.required],
     });
   }
