@@ -1,12 +1,14 @@
+$thumb-hover-color: rgba(0, 0, 0, 0.1);
+$primary: rgba(0, 0, 0, 0.1);
 .container {
   // height: 100vh;
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  margin: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  // margin: 3rem;
+  // overflow: scroll;
 }
 
 section {
@@ -50,7 +52,10 @@ section {
   background-color: #03c04a;
   width: 200px;
 }
-
+.ant-btn:not([disabled]):hover {
+  text-decoration: none;
+  color: #fff;
+}
 .ant-modal-content {
   display: inline-block;
 }
@@ -59,8 +64,14 @@ section {
 // }
 
 @media (max-height: 667px) {
+  .container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
   .h4-header {
-    margin-top: 5rem;
+    display: block;
   }
 }
 .input-group-clear-icon:hover {
@@ -73,8 +84,6 @@ section {
   position: relative;
 }
 
-
-
 /* Style for the clear icon (optional) */
 .input-group-clear-icon {
   cursor: pointer;
@@ -83,3 +92,10 @@ section {
 .input-group-clear-icon:hover {
   color: #ff4d4f; /* Adjust the color as needed */
 }
+p {
+  font-family: "Peyda-rg";
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+

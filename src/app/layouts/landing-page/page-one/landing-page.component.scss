@@ -1,5 +1,6 @@
 .container {
-  display: flex;
+  width: 100%;
+
   // grid-template-columns: repeat(1, minmax(0, 1fr));
   header {
     align-items: center;
@@ -8,7 +9,11 @@
 }
 
 .home-content {
-  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
   text-align: center !important;
 }
 span {
@@ -37,9 +42,10 @@ span {
 .img-container {
   position: relative;
   margin: 2rem 0.5rem;
+  object-fit: cover;
 
   img {
-    height: 100%;
+    height: auto;
     width: 100%;
   }
 }

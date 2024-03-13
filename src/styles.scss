@@ -51,25 +51,17 @@ body {
   margin: auto;
 }
 .swiper-slide {
-  height: auto;
+  max-width: 400px;
 }
 // .swiper-slide {
 //   .swiper-slide-next {
 //     background-color: #fff;
 //   }
 // }
-.swiper-slide swiper-slide {
-  overflow: scroll;
-}
 
 .swiper-wrapper {
   height: 100vh;
   width: 100%;
-}
-.swiper-slide {
-  .swiper-slide-prev {
-    overflow-y: scroll;
-  }
 }
 .ant-modal-footer {
   visibility: hidden;
@@ -84,6 +76,7 @@ body {
   border-radius: 20px;
   color: white;
   font-family: "Peyda-th";
+  font-size: 1rem;
   span {
     align-items: center;
   }
@@ -138,12 +131,24 @@ body {
 .ant-form label {
   font-size: 14px;
   position: absolute;
-  top: -13px;
-  right: 0;
-  font-size: 12px;
-  color: #52c41a;
-  transition: all 0.3s #52c41a ease-out;
+  z-index: 2;
+  top: 16px;
+  right: 1rem;
+  font-size: 15px;
+  color: #b7b7b7;
+  pointer-events: none;
+}
+.ant-input-group .ant-input {
+  border-radius: 10px;
+  text-align: right;
+}
+.ant-input-group:focus {
+  color: #06da06;
+  box-shadow: none;
 }
 .ant-modal-body {
   text-align: center;
+}
+.ant-modal-footer {
+  display: none;
 }

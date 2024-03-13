@@ -23,11 +23,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NZ_I18N, fa_IR } from 'ng-zorro-antd/i18n';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+
 //Component Imports *********************************************************************
 import { LandingPageComponent } from './layouts/landing-page/page-one/landing-page.component';
 import { LandingPage2Component } from './layouts/landing-page/landing-page2/landing-page2.component';
 import { SwiperModule } from 'swiper/angular';
 import { Page3Component } from './layouts/landing-page/page3/page3.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 registerLocaleData(fa);
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ registerLocaleData(fa);
     NzInputModule,
     NzButtonModule,
     NzModalModule,
+    NzSpinModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

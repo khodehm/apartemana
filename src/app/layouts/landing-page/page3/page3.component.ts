@@ -1,15 +1,6 @@
 import { Component, OnInit, Type, inject } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Inject } from '@angular/core';
-import validationService from '../../services/validation.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../../services/Iuser';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 
 @Component({
   selector: 'landing-page3',
@@ -19,29 +10,36 @@ import {
 export class Page3Component implements OnInit {
   isOpen: boolean = false;
   modalVisibility: boolean = false;
-  loading!: boolean;
+  inputFocus: boolean = false;
+  isSubmitSuccessFull: boolean = false;
+  loading: boolean = false;
   form!: FormGroup;
   users!: IUser;
-  inputFocus: boolean = false;
-  placeHolder!: [
-    'نام ونام خانوادگی مدیر ساختمان',
-    'شماره موبایل مدیر ساختمان',
-    'تعداد واحد ساختمان شما'
-  ];
-  constructor(private formGen: validationService) {}
+
+  constructor(private fb: FormBuilder) {}
   ngOnInit() {
-    this.form = this.formGen.formBuilder();
+    this.initForm();
   }
   OnInputFocus() {
     this.inputFocus = true;
   }
   OnLoad() {
     this.loading = !this.loading;
+    console.log(this.loading);
+  }
+  initForm() {
+    this.form = this.fb.group({
+      managerName: ['', Validators.required],
+      managerPhone: [
+        '',
+        [Validators.required, Validators.pattern('^09[0-9]{9}$')],
+      ],
+      numberUnit: ['', Validators.required],
+    });
   }
   handleInValidExecution() {
     Object.values(this.form.controls).forEach((control) => {
       if (control.invalid) {
-        this.loading = false;
         control.markAsDirty();
         control.updateValueAndValidity({ onlySelf: true });
       }
@@ -50,15 +48,20 @@ export class Page3Component implements OnInit {
 
   onFormSubmit() {
     if (this.form.valid) {
+      this.loading = true;
       console.log('Form Submit Success:', this.form.value);
+      setTimeout(() => {
+        this.isSubmitSuccessFull = true;
+      }, 2000);
     } else {
       this.handleInValidExecution();
       throw 'not valid form ';
     }
-    console.log(this.form.value.managerName);
+    console.log(this.form.value);
   }
   formColapse() {
     this.modalVisibility = !this.modalVisibility;
     this.form.reset();
   }
+  inputValidation() {}
 }

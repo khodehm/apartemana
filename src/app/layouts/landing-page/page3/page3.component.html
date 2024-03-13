@@ -2,7 +2,6 @@
   <section class="section-two">
     <h4 class="h4-header">چجوری شارژ واحدمون رایگان می‌شه؟</h4>
   </section>
-
   <section class="section-three">
     <p class="sec-descreption">
       فقط کافیه نرم‌افزار آپاراتمانا رو نصب کنید و شارژهای خودتونو از ظریق نرم
@@ -12,31 +11,33 @@
     </p>
     <div class="form-Container">
       <button class="btn btn-go" (click)="formColapse()">بزن بریم</button>
-
       <nz-modal
+        [nzFooter]="footer"
         [(nzVisible)]="modalVisibility"
         (nzOnCancel)="formColapse()"
         [nzClosable]="false"
       >
         <ng-container *nzModalContent="">
-          <form
-            nz-form
-            (submit)="onFormSubmit()"
-            class="form"
-            [formGroup]="form"
-          >
+          @if(!isSubmitSuccessFull) {
+          <form nz-form class="form" [formGroup]="form">
             <nz-form-item nzAlign="middle">
               <nz-form-control
                 nzErrorTip="این فیلد را نمیتوانید خالی بگذارید"
                 nzSpan="1-24"
-                ><div class="input-container">
-                  <nz-input-group>
+              >
+                <nz-input-group>
+                  <div class="input-container">
                     <label nzFor="name" nzSpan="5" nzRequired>
                       نام ونام خانوادگی مدیر ساختمان
                     </label>
-                    <input nz-input required formControlName="managerName" />
-                  </nz-input-group>
-                </div>
+                    <input
+                      nz-input
+                      required
+                      formControlName="managerName"
+                      maxlength="100"
+                    />
+                  </div>
+                </nz-input-group>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item class="formItem">
@@ -44,14 +45,19 @@
                 nzSpan="1-24"
                 nzErrorTip="لطفا شماره موبایل صحیح وارد کنید "
               >
-                <div class="input-container">
-                  <nz-input-group>
+                <nz-input-group>
+                  <div class="input-container">
                     <label nzFor="name" nzSpan="5" nzRequired
                       >شماره موبایل مدیر ساختمان</label
                     >
-                    <input nz-input required formControlName="managerPhone" />
-                  </nz-input-group>
-                </div>
+                    <input
+                      nz-input
+                      required
+                      formControlName="managerPhone"
+                      maxlength="11"
+                    />
+                  </div>
+                </nz-input-group>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item class="formItem">
@@ -59,29 +65,31 @@
                 nzSpan="1-24"
                 nzErrorTip="این فیلد را نمیتوانید خالی بگذارید"
               >
-                <div class="input-container">
-                  <nz-input-group>
+                <nz-input-group>
+                  <div class="input-container">
                     <label nzFor="name" nzSpan="5" nzRequired>
                       تعداد واحد ساختمان شما</label
                     >
-                    <input nz-input required formControlName="numberUnit" />
-                    
-                  </nz-input-group>
-                </div>
+                    <input
+                      nz-input
+                      required
+                      formControlName="numberUnit"
+                      maxlength="3"
+                    />
+                  </div>
+                </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <button
-              type="submit"
-              nz-button
-              class="nz-button"
-              (click)="OnLoad()"
-              [nzLoading]="loading"
-            >
+            <button nz-button class="nz-button" [nzLoading]="loading">
               ثبت
             </button>
           </form>
+          } @else {
+          <p>همکاران ما در اولین فرصت با مدیر ساختمان شما تماس میگیرند</p>
+          }
         </ng-container>
       </nz-modal>
+      <ng-template #footer> </ng-template>
     </div>
   </section>
 </div>
