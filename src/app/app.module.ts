@@ -32,6 +32,7 @@ import { SwiperModule } from 'swiper/angular';
 import { Page3Component } from './layouts/landing-page/page3/page3.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { InputValidatorDirective } from './directives/input-validation.directive';
+import { PhoneNumberValidationDirective } from './directives/phone-number-validation.directive';
 registerLocaleData(fa);
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ registerLocaleData(fa);
     LandingPage2Component,
     Page3Component,
     InputValidatorDirective,
+    PhoneNumberValidationDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,47 +1,45 @@
-.container {
-  width: 100%;
-
-  // grid-template-columns: repeat(1, minmax(0, 1fr));
-  header {
-    align-items: center;
-    margin-top: 1rem;
-  }
-}
-
 .home-content {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   text-align: center !important;
+}
+header{
+  margin-top: 2rem;
 }
 span {
   display: block;
 }
 .span-one {
   font-family: "Peyda-md";
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: white;
   line-height: 3.5rem;
 }
 .span-two {
   font-family: "Peyda-md";
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ffff;
   font-weight: bolder;
   line-height: 3.5rem;
 }
 .span-three {
   font-family: "Peyda-md";
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: yellow;
   font-weight: bolder;
   line-height: 3.5rem;
 }
 .img-container {
   position: relative;
-  margin: 2rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 1rem;
   object-fit: cover;
 
   img {
@@ -55,27 +53,11 @@ span {
   background: inherit;
   box-shadow: unset;
   border: unset;
+  margin-top: 2rem;
   animation: arrowAnimate 1s infinite;
-  padding: 1rem;
   img {
     cursor: pointer;
     position: inherit;
     width: 25px;
-  }
-}
-
-@media (max-height: 667px) {
-  .arrow {
-    text-decoration: none;
-    // margin: 2rem;
-    background: inherit;
-    box-shadow: unset;
-    border: unset;
-    animation: bounce 1s infinite;
-    img {
-      cursor: pointer;
-      position: inherit;
-      width: 25px;
-    }
   }
 }

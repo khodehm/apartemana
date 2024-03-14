@@ -1,4 +1,11 @@
-import { Component, OnInit, Type, inject } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Type,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../../../services/Iuser';
 
@@ -15,6 +22,7 @@ export class Page3Component implements OnInit {
   loading: boolean = false;
   form!: FormGroup;
   users!: IUser;
+  @ViewChild('inputElement', { read: true }) inputEl!: ElementRef;
 
   constructor(private fb: FormBuilder) {}
   ngOnInit() {
@@ -22,6 +30,7 @@ export class Page3Component implements OnInit {
   }
   OnInputFocus() {
     this.inputFocus = true;
+    this.inputEl.nativeElement.focus();
   }
   OnLoad() {
     this.loading = !this.loading;
@@ -49,7 +58,8 @@ export class Page3Component implements OnInit {
       console.log('Form Submit Success:', this.form.value);
       setTimeout(() => {
         this.isSubmitSuccessFull = true;
-      }, 2000);
+      }, 1000);
+      this.isSubmitSuccessFull = false;
     } else {
       this.handleInValidExecution();
       throw 'not valid form ';

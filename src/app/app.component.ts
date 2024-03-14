@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'apartemanaa';
   config: SwiperOptions = {
     direction: 'vertical',
-    height: window.innerHeight,
-    width: window.innerWidth,
+    // width: window.innerWidth,
+    // height:window.innerHeight
   };
 }

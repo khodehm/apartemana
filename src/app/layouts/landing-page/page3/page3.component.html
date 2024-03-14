@@ -19,7 +19,12 @@
       >
         <ng-container *nzModalContent="">
           @if(!isSubmitSuccessFull) {
-          <form nz-form class="form" [formGroup]="form">
+          <form
+            nz-form
+            class="form"
+            [formGroup]="form"
+            (ngSubmit)="onFormSubmit()"
+          >
             <nz-form-item nzAlign="middle">
               <nz-form-control
                 nzErrorTip="این فیلد را نمیتوانید خالی بگذارید"
@@ -31,12 +36,13 @@
                       نام ونام خانوادگی مدیر ساختمان
                     </label>
                     <input
+                      inputValidator
                       nz-input
                       required
                       formControlName="managerName"
                       maxlength="100"
                       nzFor="managerName"
-                      inputValidator
+                      #inputElement
                     />
                   </div>
                 </nz-input-group>
@@ -49,7 +55,7 @@
               >
                 <nz-input-group>
                   <div class="input-container">
-                    <label nzFor="name" nzSpan="5" nzRequired
+                    <label nzFor="phone" nzSpan="5" nzRequired
                       >شماره موبایل مدیر ساختمان</label
                     >
                     <input
@@ -57,7 +63,8 @@
                       required
                       formControlName="managerPhone"
                       maxlength="11"
-                      inputValidator
+                      PhoneNumberValidation
+                      #inputElement
                     />
                   </div>
                 </nz-input-group>
@@ -78,12 +85,18 @@
                       required
                       formControlName="numberUnit"
                       maxlength="3"
+                      #inputElement
                     />
                   </div>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <button nz-button class="nz-button" [nzLoading]="loading">
+            <button
+              nz-button
+              class="nz-button"
+              type="submit"
+              [nzLoading]="loading"
+            >
               ثبت
             </button>
           </form>
