@@ -23,10 +23,10 @@ export class PhoneNumberValidationDirective implements Validator {
     if (!control.value) {
       return null;
     }
-    const phoneRegex = /09[0-9]{9}/;
+    const phoneRegex = /^09[0-9]{9}$/;
 
     if (!phoneRegex.test(control.value)) {
-      control.setValue('');
+      
       console.log(control.valid, control.value);
       return { invalidInput: true };
     }

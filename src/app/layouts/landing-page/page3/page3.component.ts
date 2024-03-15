@@ -1,12 +1,18 @@
 import {
   Component,
   ElementRef,
+  HostListener,
   OnInit,
   Type,
   ViewChild,
   inject,
 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { IUser } from '../../../services/Iuser';
 
 @Component({
@@ -15,6 +21,7 @@ import { IUser } from '../../../services/Iuser';
   styleUrl: 'page3.component.scss',
 })
 export class Page3Component implements OnInit {
+  @ViewChild('inputElement', { read: true }) inputEl!: ElementRef;
   isOpen: boolean = false;
   modalVisibility: boolean = false;
   inputFocus: boolean = false;
@@ -22,16 +29,12 @@ export class Page3Component implements OnInit {
   loading: boolean = false;
   form!: FormGroup;
   users!: IUser;
-  @ViewChild('inputElement', { read: true }) inputEl!: ElementRef;
+  constructor(private fb: FormBuilder, private formLabel: ElementRef) {}
 
-  constructor(private fb: FormBuilder) {}
   ngOnInit() {
     this.initForm();
   }
-  OnInputFocus() {
-    this.inputFocus = true;
-    this.inputEl.nativeElement.focus();
-  }
+
   OnLoad() {
     this.loading = !this.loading;
     console.log(this.loading);
@@ -59,7 +62,6 @@ export class Page3Component implements OnInit {
       setTimeout(() => {
         this.isSubmitSuccessFull = true;
       }, 1000);
-      this.isSubmitSuccessFull = false;
     } else {
       this.handleInValidExecution();
       throw 'not valid form ';
@@ -69,6 +71,7 @@ export class Page3Component implements OnInit {
   formColapse() {
     this.modalVisibility = !this.modalVisibility;
     this.form.reset();
+    this.isSubmitSuccessFull = false;
   }
-  inputValidation() {}
+  //end of form begning event Liteners
 }

@@ -10,13 +10,14 @@ header {
   align-items: center;
   // margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   flex-direction: row-reverse;
 }
 .img-container {
-  position: relative;
-  width: 9rem;
+  display: flex;
+  width: 8rem;
+  align-items: center;
+  justify-content: center;
 }
 section {
   text-align: center;

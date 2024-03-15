@@ -3,14 +3,18 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  // height: 100vh;
+  height: 100vh;
   text-align: center !important;
 }
-header{
-  margin-top: 2rem;
+header {
+  margin-top: 1rem;
 }
 span {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 .span-one {
   font-family: "Peyda-md";
@@ -39,7 +43,7 @@ span {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  margin: 1rem;
+  // margin: 1rem;
   object-fit: cover;
 
   img {
@@ -53,7 +57,7 @@ span {
   background: inherit;
   box-shadow: unset;
   border: unset;
-  margin-top: 2rem;
+  // margin-top: 1rem;
   animation: arrowAnimate 1s infinite;
   img {
     cursor: pointer;

@@ -109,16 +109,36 @@ body {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.ant-form label {
+
+.ant-form-item-label {
   font-size: 14px;
   position: absolute;
-  z-index: 2;
-  top: 16px;
-  right: 1rem;
-  font-size: 15px;
+  z-index: 1;
+  top: 13px;
+  right: 10px;
   color: #b7b7b7;
-  pointer-events: none;
+  overflow: unset;
 }
+.ant-form-item-label > label {
+  display: unset;
+  height: 32px;
+  color: #b7b7b7;
+  font-size: 14px;
+}
+
+.ant-form:hover {
+  .ant-form-item-label {
+    border-bottom: #00bc00;
+    transform: translateY(-35px);
+    opacity: 0.6;
+    transition: ease-in-out 100ms;
+  }
+  label {
+    color: #06da06;
+  }
+}
+
+
 .ant-input-group .ant-input {
   border-radius: 10px;
   text-align: right;
@@ -126,6 +146,12 @@ body {
 }
 .ant-input-group:focus {
   color: #06da06;
+  border-color: #00bc00;
+  box-shadow: none;
+}
+.ant-input-focused,
+.ant-input:focus {
+  border-color: none;
   box-shadow: none;
 }
 .ant-input:hover {
@@ -145,10 +171,4 @@ body {
 .ant-input-affix-wrapper-focused {
   border: none;
   box-shadow: none;
-}
-.ant-form:focus {
-  label {
-    top: 10px;
-    color: #00bc00;
-  }
 }
