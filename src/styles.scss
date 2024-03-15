@@ -64,7 +64,7 @@ body {
   background-color: #00bc00;
   border-radius: 20px;
   color: white;
-  font-family: "Peyda-th";
+  font-family: "Peyda-md";
   font-size: 1rem;
   span {
     align-items: center;
@@ -122,24 +122,24 @@ body {
   height: 32px;
   color: #b7b7b7;
   font-size: 14px;
- 
 }
 
 .ant-form:hover {
   .ant-form-item-label {
-    border-bottom: #00bc00;
-    transform: translateY(-35px);
+    border-collapse: collapse;
+    transform: translateY(-30px);
     transition: ease-in-out 100ms;
   }
   label {
     color: #06da06;
- 
   }
-  &::after{
-    background: #000;
+  .ant-form-item-explain-error {
+    visibility: hidden;
   }
 }
-
+.ant-input-group:focus:hover {
+  border-collapse: collapse;
+}
 .ant-input-group .ant-input {
   border-radius: 10px;
   text-align: right;
