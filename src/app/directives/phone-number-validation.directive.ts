@@ -31,7 +31,7 @@ export class PhoneNumberValidationDirective implements Validator {
       console.log(control.valid, control.value);
       return { invalidInput: true };
     }
-
+    
     return null;
   }
 }

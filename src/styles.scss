@@ -109,14 +109,12 @@ body {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 .ant-form-item-label {
   font-size: 14px;
   position: absolute;
   z-index: 1;
   top: 13px;
   right: 10px;
-  color: #b7b7b7;
   overflow: unset;
 }
 .ant-form-item-label > label {
@@ -124,20 +122,23 @@ body {
   height: 32px;
   color: #b7b7b7;
   font-size: 14px;
+ 
 }
 
 .ant-form:hover {
   .ant-form-item-label {
     border-bottom: #00bc00;
     transform: translateY(-35px);
-    opacity: 0.6;
     transition: ease-in-out 100ms;
   }
   label {
     color: #06da06;
+ 
+  }
+  &::after{
+    background: #000;
   }
 }
-
 
 .ant-input-group .ant-input {
   border-radius: 10px;
@@ -154,6 +155,7 @@ body {
   border-color: none;
   box-shadow: none;
 }
+
 .ant-input:hover {
   border-color: #06da06;
 }
