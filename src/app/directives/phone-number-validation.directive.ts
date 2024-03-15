@@ -24,9 +24,10 @@ export class PhoneNumberValidationDirective implements Validator {
       return null;
     }
     const phoneRegex = /^09[0-9]{9}$/;
+    const persianEnRegex = /^[\u0600-\u06FF\s\u200C]+|[a-zA-Z\s]+$/;
 
-    if (!phoneRegex.test(control.value)) {
-      
+    if (persianEnRegex.test(control.value)) {
+      control.setValue('');
       console.log(control.valid, control.value);
       return { invalidInput: true };
     }
