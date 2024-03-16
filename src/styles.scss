@@ -1,7 +1,11 @@
+@import "./styles/form.scss";
+@import "./styles/scrollBar.scss";
 /* You can add global styles to this file, and also import other style files */
 /*   You can mark the path "src/styles.css" as external 
 to exclude it from the bundle, which will remove this error 
 and leave the unresolved path in the bundle.e unresolved path in the bundle. */
+$textDark: #444444;
+$primary: #00bc00;
 
 @font-face {
   font-family: "Peyda-th";
@@ -72,105 +76,14 @@ body {
 }
 .ant-modal-body {
   font-family: "Peyda-md";
-}
-
-.ant-form {
-  display: block;
-  align-content: center;
-  padding: 10px;
   direction: rtl;
-  input {
-    height: 50px;
-  }
-
-  .ant-input-group > .ant-input:first-child {
-    border-radius: 12px;
-  }
-
-  .ant-input-status-error:not(.ant-input-disabled):not(
-      .ant-input-borderless
-    ).ant-input-focused,
-  .ant-input-status-error:not(.ant-input-disabled):not(
-      .ant-input-borderless
-    ).ant-input:focus {
-    border-color: #ff7875;
-    box-shadow: none;
+  button {
+    align-items: center;
   }
 }
-
 .ant-modal-content {
-  border-radius: 10%;
+  border-radius: 15px;
 }
-.ant-input-group-addon:last-child,
-.ant-input-group-addon:last-child .ant-select .ant-select-selector,
-.ant-input-group > .ant-input-affix-wrapper:not(:first-child) .ant-input,
-.ant-input-group > .ant-input:last-child,
-.ant-input-group > .ant-input:last-child .ant-select .ant-select-selector {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.ant-form-item-label {
-  font-size: 14px;
-  position: absolute;
-  z-index: 1;
-  top: 13px;
-  right: 10px;
-  overflow: unset;
-}
-.ant-form-item-label > label {
-  display: unset;
-  height: 32px;
-  color: #b7b7b7;
-  font-size: 14px;
-}
-
-.ant-form:hover {
-  .ant-form-item-label {
-    border-collapse: collapse;
-    transform: translateY(-30px);
-    transition: ease-in-out 100ms;
-  }
-  label {
-    color: #06da06;
-  }
-  .ant-form-item-explain-error {
-    visibility: hidden;
-  }
-}
-.ant-input-group:focus:hover {
-  border-collapse: collapse;
-}
-.ant-input-group .ant-input {
-  border-radius: 10px;
-  text-align: right;
-  color: unset;
-}
-.ant-input-group:focus {
-  color: #06da06;
-  border-color: #00bc00;
-  box-shadow: none;
-}
-.ant-input-focused,
-.ant-input:focus {
-  border-color: none;
-  box-shadow: none;
-}
-
-.ant-input:hover {
-  border-color: #06da06;
-}
-.ant-modal-body {
-  text-align: center;
-}
-.ant-modal-footer {
-  display: none;
-}
-.ant-form-item-explain {
-  text-align: right;
-}
-
-.ant-input-affix-wrapper:focus,
-.ant-input-affix-wrapper-focused {
-  border: none;
-  box-shadow: none;
+.ant-form {
+  direction: rtl;
 }

@@ -21,7 +21,6 @@ import { IUser } from '../../../services/Iuser';
   styleUrl: 'page3.component.scss',
 })
 export class Page3Component implements OnInit {
-  @ViewChild('inputElement', { read: true }) inputEl!: ElementRef;
   isOpen: boolean = false;
   modalVisibility: boolean = false;
   inputFocus: boolean = false;
@@ -45,6 +44,7 @@ export class Page3Component implements OnInit {
       managerPhone: ['', [Validators.required]],
       numberUnit: ['', Validators.required],
     });
+    
   }
   handleInValidExecution() {
     Object.values(this.form.controls).forEach((control) => {
