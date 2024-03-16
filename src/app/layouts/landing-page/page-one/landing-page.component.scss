@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
   text-align: center !important;
 }
 header {
@@ -58,11 +58,16 @@ span {
   background: inherit;
   box-shadow: unset;
   border: unset;
-  // margin-top: 1rem;
+  margin-top: 2rem;
   animation: arrowAnimate 1s infinite;
   img {
     cursor: pointer;
     position: inherit;
     width: 25px;
+  }
+}
+@media (min-width: 1200px) {
+  .arrow {
+    margin-top: 0;
   }
 }

@@ -44,7 +44,6 @@ export class Page3Component implements OnInit {
       managerPhone: ['', [Validators.required]],
       numberUnit: ['', Validators.required],
     });
-    
   }
   handleInValidExecution() {
     Object.values(this.form.controls).forEach((control) => {
@@ -61,6 +60,7 @@ export class Page3Component implements OnInit {
       console.log('Form Submit Success:', this.form.value);
       setTimeout(() => {
         this.isSubmitSuccessFull = true;
+        document.location.href = 'https://apartemana.com/';
       }, 1000);
     } else {
       this.handleInValidExecution();
